@@ -11,9 +11,10 @@ class JsonLinesPipeline:
         )
 
     def close_spider(self, spider):
-        self.file.close()
+        if getattr(self, "file", None):
+            self.file.close()
 
-    def process_item(self, item):
+    def process_item(self, item, spider):
         self.file.write(
             json.dumps(dict(item), ensure_ascii=False, sort_keys=True) + "\n"
         )
