@@ -85,8 +85,8 @@ BLOOMFILTER_HASHES = 7
 
 # Redis runs in local WSL Ubuntu. Windows can usually reach it through 127.0.0.1
 # when redis-server is bound to 0.0.0.0 or localhost forwarding is enabled.
-REDIS_HOST = os.getenv("REDIS_HOST", "127.0.0.1")
-REDIS_PORT = int(os.getenv("REDIS_PORT", "6379"))
+REDIS_HOST = "10.157.157.69"
+REDIS_PORT = "6379"
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html

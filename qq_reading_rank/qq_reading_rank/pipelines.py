@@ -3,14 +3,14 @@ from pathlib import Path
 
 
 class JsonLinesPipeline:
-    def open_spider(self):
+    def open_spider(self, spider):
         output_dir = Path("data")
         output_dir.mkdir(exist_ok=True)
         self.file = (output_dir / "qq_hot_rank_books.jl").open(
             "a", encoding="utf-8"
         )
 
-    def close_spider(self):
+    def close_spider(self, spider):
         self.file.close()
 
     def process_item(self, item):
